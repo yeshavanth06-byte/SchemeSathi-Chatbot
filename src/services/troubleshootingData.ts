@@ -1,0 +1,105 @@
+import { TroubleshootingIssue } from '../types';
+
+export const TROUBLESHOOTING_ISSUES: TroubleshootingIssue[] = [
+  {
+    id: 'otp-issues',
+    category: 'otp',
+    title: 'OTP Not Received on Mobile Number',
+    symptoms: [
+      'Waiting several minutes but SMS with OTP does not arrive',
+      'Getting message "OTP expired" immediately',
+      'Portal says OTP sent, but phone inbox is empty'
+    ],
+    solutions: [
+      'Verify that the mobile number entered is the one actively linked to your Aadhaar card on UIDAI (not just your current SIM). Check your linked Aadhaar mobile on https://myaadhaar.uidai.gov.in under "Verify Email/Mobile Number".',
+      'Check if your mobile has DND (Do Not Disturb) or promotional SMS blocker enabled. Commercial and government OTP shortcodes are sometimes classified as promotional by telcos.',
+      'Restart your phone or toggle Airplane mode on and off for 15 seconds to reconnect to the nearest cell tower.',
+      'Check SIM SMS balance / active validity plan. Prepaid SIMs without an active incoming pack sometimes fail to receive automated short-code bulk SMS.',
+      'Government portals (like PM-KISAN, NSP, Ayushman) experience peak traffic between 10:00 AM and 3:00 PM. Retry during non-peak hours (before 9 AM or after 7 PM).',
+      'If your mobile number on Aadhaar is outdated, visit your nearest Aadhaar Seva Kendra or Post Office with biometric update to update your mobile number.'
+    ],
+    helplineOrLinks: [
+      { label: 'UIDAI Aadhaar Mobile Verification', url: 'https://myaadhaar.uidai.gov.in/verify-email-mobile' },
+      { label: 'Locate Nearest Aadhaar Seva Kendra', url: 'https://appointments.uidai.gov.in/easearch.aspx' }
+    ]
+  },
+  {
+    id: 'login-password',
+    category: 'login',
+    title: 'Portal Login Failure / Password Reset / Locked Account',
+    symptoms: [
+      'Error message: "Invalid credentials" or "User does not exist"',
+      'Account locked after 3 unsuccessful attempts',
+      'Captcha code not loading or showing "Invalid Captcha"'
+    ],
+    solutions: [
+      'Use "Forgot Password" or "Forgot Registration ID" link on the portal login page. Have your Aadhaar number or Registered Mobile Number ready for OTP verification.',
+      'Clear your browser cache, cookies, and temporary files, or open an Incognito / Private window in Google Chrome / Mozilla Firefox.',
+      'Ensure caps lock is off. Note that passwords on government portals typically require: 1 Uppercase, 1 Lowercase, 1 Number, and 1 Special character (e.g., @, #, $).',
+      'If the Captcha image is broken, click the Refresh icon next to the Captcha or disable ad-blockers / browser extensions like Brave Shields or uBlock Origin.',
+      'Many government portals now support login with DigiLocker / MeriPehchaan (National Single Sign-On). Use "Sign in with DigiLocker" if regular password fails.'
+    ],
+    helplineOrLinks: [
+      { label: 'MeriPehchaan National Single Sign-On', url: 'https://meripehchaan.gov.in' },
+      { label: 'DigiLocker Citizen Login', url: 'https://www.digilocker.gov.in' }
+    ]
+  },
+  {
+    id: 'document-upload',
+    category: 'upload',
+    title: 'Document Upload Errors & File Size Rejection',
+    symptoms: [
+      'Error: "File size exceeds limit (Max 200KB / 500KB)"',
+      'Error: "Invalid file format. Only PDF / JPEG allowed"',
+      'Upload button freezes or page crashes upon selecting file'
+    ],
+    solutions: [
+      'Check exact portal limits: Most central portals (NSP, PM-KISAN, PMAY) strictly require PDF or JPEG files with file size strictly between 50KB and 200KB.',
+      'Compress your PDF: Use free tools like Adobe Free PDF Compressor, Smallpdf, or your phone\'s scanner app (DocScanner / Adobe Scan) to compress the file to below 200KB.',
+      'Check file name: Do NOT use special characters, spaces, dots, or symbols in the file name. Name it cleanly like "AadhaarCard.pdf" or "IncomeCert.pdf" instead of "Doc_12/03/24 (1).pdf".',
+      'Ensure scanner resolution is set between 100 DPI and 150 DPI in Black & White or Grayscale. Color 300 DPI scans are too large.',
+      'Make sure the scanned document is clear and readable: blurred text or cut borders will cause verification officers to reject the application later.'
+    ]
+  },
+  {
+    id: 'dbt-npci-banking',
+    category: 'payment_dbt',
+    title: 'DBT Payment Failed / PFMS Rejection / Aadhaar-Bank Account Not Seeded',
+    symptoms: [
+      'PM-KISAN / Scholarship / Ladli Behna status shows: "Payment Failed" or "FTO Pending" or "NPCI Inactive"',
+      'Portal message: "Aadhaar is not mapped to Bank Account (DBT Inactive)"',
+      'Money not credited despite application approval'
+    ],
+    solutions: [
+      'Crucial distinction: "Linking Aadhaar for KYC" is NOT the same as "Seeding Aadhaar with NPCI for DBT". Your bank account must be mapped on the NPCI (National Payments Corporation of India) mapper to receive government subsidies.',
+      'How to check NPCI status: Visit https://myaadhaar.uidai.gov.in, log in with Aadhaar OTP, and click on "Bank Seeding Status". It will show the active bank name mapped for DBT.',
+      'If status is Inactive or linked to a closed old account: Visit your primary bank branch in person. Request the customer desk for "Aadhaar NPCI DBT Seeding Mandate Form" (Aadhaar seeding consent form).',
+      'Alternatively, if you have an India Post Payments Bank (IPPB) account, you can enable DBT directly via the IPPB Mobile Banking App within 24 hours.',
+      'Ensure your bank account is not dormant / inoperative due to lack of transactions. Carry out a small deposit or withdrawal to keep the account active.'
+    ],
+    helplineOrLinks: [
+      { label: 'Check Aadhaar Bank Seeding Status (UIDAI)', url: 'https://myaadhaar.uidai.gov.in/bank-seeding-status' },
+      { label: 'PFMS Public Financial Management System Tracking', url: 'https://pfms.nic.in' }
+    ]
+  },
+  {
+    id: 'status-tracking',
+    category: 'status',
+    title: 'How to Track Application Status & Resolve Delays',
+    symptoms: [
+      'Status shows "Pending at State/District Nodal Officer (SNO/DNO)" for weeks',
+      'Don\'t know where to track application reference number',
+      'Need to file grievance for wrongful rejection'
+    ],
+    solutions: [
+      'Always save and print your Application Acknowledgment Receipt / Reference Number upon submitting any government application.',
+      'Track directly on the specific scheme portal under "Beneficiary Status" or "Know Your Status" by entering Aadhaar or Application ID.',
+      'Check PFMS (Public Financial Management System) at https://pfms.nic.in under "Know Your Payments" using your Bank Name and Account Number to view any government funds in transit.',
+      'If an application has been held without justification beyond the Citizen Charter timeline (usually 30 to 45 days), lodge a formal grievance on the Centralized Public Grievance Redress and Monitoring System (CPGRAMS) at https://pgportal.gov.in. Grievances on CPGRAMS are monitored by the Prime Minister\'s Office (PMO) and must be responded to by the concerned ministry within 30 days.'
+    ],
+    helplineOrLinks: [
+      { label: 'CPGRAMS Central Public Grievance Portal', url: 'https://pgportal.gov.in' },
+      { label: 'PFMS "Know Your Payments" Tracker', url: 'https://pfms.nic.in/static/NewLayout/knowyourpayment.aspx' }
+    ]
+  }
+];

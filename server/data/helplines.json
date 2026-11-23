@@ -1,0 +1,47 @@
+[
+  {
+    "name": "National Emergency Response (All in One)",
+    "number": "112",
+    "purpose": "Police, Fire, Ambulance & Disaster Response"
+  },
+  {
+    "name": "Kisan Call Centre (Agriculture)",
+    "number": "1800-180-1551",
+    "purpose": "Expert agricultural consultation and PM-KISAN help"
+  },
+  {
+    "name": "Ayushman Bharat (PM-JAY)",
+    "number": "14555",
+    "purpose": "Hospital empanelment, golden card & claims inquiry"
+  },
+  {
+    "name": "National Cyber Crime Reporting",
+    "number": "1930",
+    "purpose": "Report financial cyber fraud / OTP / online banking phishing"
+  },
+  {
+    "name": "National Scholarship Portal (NSP)",
+    "number": "0120-6619540",
+    "purpose": "Scholarship status, biometric and DNO inquiries"
+  },
+  {
+    "name": "Women Helpline (Domestic/Distress)",
+    "number": "181",
+    "purpose": "24x7 emergency response and legal guidance for women"
+  },
+  {
+    "name": "National Food Security (Ration)",
+    "number": "1967",
+    "purpose": "Ration card issues, ONORC portability, Fair Price Shops"
+  },
+  {
+    "name": "Senior Citizen Elderline",
+    "number": "14567",
+    "purpose": "Support, legal and pension assistance for seniors"
+  },
+  {
+    "name": "CPGRAMS Central Public Grievances",
+    "number": "1800-11-0031",
+    "purpose": "Government department grievance escalations"
+  }
+]
